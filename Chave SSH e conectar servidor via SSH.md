@@ -16,4 +16,7 @@ $ ssh username@server
 
 # recebe no servidor a atual versão do repositório
 $ git pull
+
+# scan after clone keys
+$ ssh-keyscan -t rsa domain >> ~/.ssh/known_hosts
 ```
