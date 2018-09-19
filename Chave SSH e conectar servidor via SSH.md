@@ -1,22 +1,37 @@
-Chave SSH e conectar servidor via SSH
----------------------------------------------
+# Chave SSH e conectar servidor via SSH
+
+Visualiza sua chave.
 
 ```sh
-# visualiza sua chave
 $ cat ~/.ssh/id_rsa.pub
+```
 
-# gera a chave
+Gera a chave.
+
+```sh
 $ ssh-keygen -t rsa -C "account@domain"
+```
 
-# copia sua chave para as autorizadas no servidor
-$ scp ~/.ssh/id_rsa.pub username@server:~/.ssh/authorized_keys
+Copia sua chave para as autorizadas no servidor.
 
-# conecta ao servidor.
+```sh
+$ cat ~/.ssh/id_rsa.pub | ssh username@server 'cat >> ~/.ssh/authorized_keys'
+```
+
+Conecta ao servidor.
+
+```sh
 $ ssh username@server
+```
 
-# recebe no servidor a atual versão do repositório
+Recebe no servidor a atual versão do repositório.
+
+```sh
 $ git pull
+```
 
-# scan after clone keys
+Scan after clone keys.
+
+```sh
 $ ssh-keyscan -t rsa domain >> ~/.ssh/known_hosts
 ```
